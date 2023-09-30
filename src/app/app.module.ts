@@ -29,6 +29,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { PostShowComponent } from './components/post-show/post-show.component';
 import { AddFriendComponent } from './components/add-friend/add-friend.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { RegisterPageComponent } from './pages/register-page/register-page.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+
+import { HttpClientModule } from '@angular/common/http';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +47,11 @@ import { ProfileComponent } from './components/profile/profile.component';
     ProfilePageComponent,
     PostShowComponent,
     AddFriendComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginPageComponent,
+    RegisterPageComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -60,8 +72,12 @@ import { ProfileComponent } from './components/profile/profile.component';
     MdbTooltipModule,
     MdbValidationModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    {provide:'apiUrl',useValue:'http://localhost:8080/api/'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
